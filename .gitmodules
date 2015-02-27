@@ -1,6 +1,6 @@
-[submodule "src/CSSmethods"]
-	path = src/CSSmethods
-	url = https://github.com/aberigle/CSSmethods
 [submodule "flappy"]
 	path = flappy
 	url = https://github.com/aberigle/floppybird
+[submodule "src/stylus/cssmethods"]
+	path = src/stylus/cssmethods
+	url = https://aberigle@github.com/aberigle/CSSmethods.git
