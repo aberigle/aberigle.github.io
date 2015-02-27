@@ -1,0 +1,54 @@
+[data-tuktuk="modal"]
+  background #fff
+  transition all 250ms
+  top 0
+  &.active
+    top 0
+  header
+    background: THEME !important
+    color WHITE
+  article
+    height auto !important
+
+[data-tuktuk="lock"]
+  opacity 0
+  transition all 250ms
+  &.active
+    opacity 1
+    &:not([data-active=true])
+      background-color rgba(0,0,0,0.8)
+    &[data-loading=true]
+      background-color rgba(0,0,0,0.0)
+      > .loading
+        background-color rgba(0,0,0,0.5)
+        border-radius BORDER-RADIUS
+        &::before, &::after 
+          background #fff
+          border-radius 1em
+
+.spinner 
+  SIZE = 5em
+  display none
+  width SIZE
+  height (SIZE / 2)
+  &.active
+    display inline-block
+    background-color none
+    SPEED = 1s
+    &::before, &::after 
+      border-radius 50%
+      background THEME
+      content ""
+      display inline-block
+      width  SIZE * 0.3
+      height SIZE * 0.3
+    &::before 
+      animation loading-dots SPEED infinite
+      margin-left SIZE * 0.1
+      margin-top  SIZE * 0.1
+      float left
+    &::after 
+      animation loading-dots SPEED (SPEED / 2) infinite
+      margin-right SIZE * 0.1
+      margin-top   SIZE * 0.1
+      float right
