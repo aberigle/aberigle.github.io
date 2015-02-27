@@ -18,7 +18,7 @@ module.exports = (grunt) ->
         "src/coffee/*.coffee"
         "src/coffee/*/*.coffee"]
       stylus : [
-        "src/stylus/*.styl"]
+        "src/stylus/theme*styl"]
       jade   : [
         "src/jade/app.jade"]
       jade_files : [
@@ -45,7 +45,7 @@ module.exports = (grunt) ->
     stylus:
       tmp:
         options:
-          compress: false, import: ["../CSSmethods/vendor.styl"]
+          compress: false, import: ["__constants"]
         files:
           '<%=meta.static%>/css/<%=pkg.name%>.css' : '<%=src.stylus%>'
 
