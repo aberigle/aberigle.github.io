@@ -1,8 +1,39 @@
 doctype html
 head
-  link(rel="stylesheet", href="static/css/app.css")
-body
   
-    
+  title @aberigle
+  meta(charset="utf-8")
+  meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+  meta(name="author" content="@aberigle")
+  meta(name="description" content="Laugar Brewery")
+  meta(http-equiv="Content-Language" content="es")
+  meta(name="revisit-after" content="1 days")
+  meta(name="distribution" content="global")
+  link(rel="stylesheet", href="/dependencies/tuktuk/tuktuk.css")
+  link(rel="stylesheet", href="/dependencies/tuktuk/tuktuk.icons.css")
+  link(rel="stylesheet", href="/static/css/app.css")
+body.background-image(style="background-image:url('/static/images/bck.jpg')")
+  div.full-width.full-height.background-image.absolute(style="background-color:rgba(0,0,0,0.4)")
+  section#main.full-width
+    div.centered.info
+      div.avatar.centered
+        img.responsive.round(src="https://avatars3.githubusercontent.com/u/3426238")
+      div.social.padding-top.margin-top
+        div.hide-phone
+          a.icon.twitter(href="https://twitter.com/aberigle",target="_blank")
+          a.icon.google-plus(href="https://plus.google.com/115171581646420603678",target="_blank")
+          a.icon.github(href="https://github.com/aberigle",target="_blank")
+          a.icon.linkedin(href="https://linkedin.com/in/aberigle",target="_blank")
+          a.icon.envelope-alt(href="mailto:a.berzosa.iglesias@gmail.com")
+        div.show-phone
+          a.icon.twitter(href="https://twitter.com/aberigle",target="_blank")
+          a.icon.google-plus(href="https://plus.google.com/115171581646420603678",target="_blank")
+          a.icon.github(href="https://github.com/aberigle",target="_blank")
+          a.icon.linkedin(href="https://linkedin.com/in/aberigle",target="_blank")
+          a.icon.envelope-alt(href="mailto:a.berzosa.iglesias@gmail.com")
+        
+  
+  script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js")
+  script(src="/dependencies/tuktuk/tuktuk.js")
   script(src="static/js/app.debug.js")
-  script(src="//localhost:35729/livereload.js")
+  script(src="//192.168.0.20:35729/livereload.js")
