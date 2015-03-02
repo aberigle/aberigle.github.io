@@ -12,7 +12,7 @@ head
   link(rel="stylesheet", href="/dependencies/tuktuk/tuktuk.css")
   link(rel="stylesheet", href="/dependencies/tuktuk/tuktuk.icons.css")
   link(rel="stylesheet", href="/static/css/app.css")
-body.background-image(style="background-image:url('/static/images/bck.jpg')")
+body.background-image
   div.full-width.full-height.background-image.absolute(style="background-color:rgba(0,0,0,0.4)")
   section#main.full-width
     div.centered.info
@@ -31,6 +31,14 @@ body.background-image(style="background-image:url('/static/images/bck.jpg')")
           a.icon.github(href="https://github.com/aberigle",target="_blank")
           a.icon.linkedin(href="https://linkedin.com/in/aberigle",target="_blank")
           a.icon.envelope-alt(href="mailto:a.berzosa.iglesias@gmail.com")
+  footer.padding.full-width
+    div#copyright
+      a(target="_blank")
+    div.on-right.uhurus
+      p made with 
+        span.icon.coffee
+        |  by 
+        a(href="http://uhurus.com", target="_blank") uhurus
         
   
   script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js")
