@@ -7,11 +7,11 @@
   color: #cf0c14;
 }
 [data-tuktuk=boxes] aside.absolute {
-  -webkit-transition: all 400ms;
-  -moz-transition: all 400ms;
-  -ms-transition: all 400ms;
-  -o-transition: all 400ms;
-  transition: all 400ms;
+  -webkit-transition: all 1000ms;
+  -moz-transition: all 1000ms;
+  -ms-transition: all 1000ms;
+  -o-transition: all 1000ms;
+  transition: all 1000ms;
 }
 [data-tuktuk=boxes] aside header {
   -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.1);
@@ -175,11 +175,11 @@ form textarea,
   -ms-border-radius: 0px;
   -o-border-radius: 0px;
   border-radius: 0px;
-  -webkit-transition: border-color 400ms;
-  -moz-transition: border-color 400ms;
-  -ms-transition: border-color 400ms;
-  -o-transition: border-color 400ms;
-  transition: border-color 400ms;
+  -webkit-transition: border-color 1000ms;
+  -moz-transition: border-color 1000ms;
+  -ms-transition: border-color 1000ms;
+  -o-transition: border-color 1000ms;
+  transition: border-color 1000ms;
   background-color: #f1f4f7;
 }
 form input[type="text"].error,
@@ -373,6 +373,9 @@ form label,
   background-color: #aa0a10;
 }
 
+body {
+  overflow: hidden;
+}
 #main {
   position: absolute;
   margin-top: 15%;
@@ -380,18 +383,28 @@ form label,
 }
 #main .info .avatar {
   width: 200px;
+  -webkit-transition: margin-top 500ms ease-in-out;
+  -moz-transition: margin-top 500ms ease-in-out;
+  -ms-transition: margin-top 500ms ease-in-out;
+  -o-transition: margin-top 500ms ease-in-out;
+  transition: margin-top 500ms ease-in-out;
 }
 #main .info .social {
   text-align: center;
   color: #fff;
   font-size: xx-large;
+  -webkit-transition: margin-top 666.666666666667ms ease-in-out;
+  -moz-transition: margin-top 666.666666666667ms ease-in-out;
+  -ms-transition: margin-top 666.666666666667ms ease-in-out;
+  -o-transition: margin-top 666.666666666667ms ease-in-out;
+  transition: margin-top 666.666666666667ms ease-in-out;
 }
 #main .info .social a {
-  -webkit-transition: all 400ms;
-  -moz-transition: all 400ms;
-  -ms-transition: all 400ms;
-  -o-transition: all 400ms;
-  transition: all 400ms;
+  -webkit-transition: background 1000ms;
+  -moz-transition: background 1000ms;
+  -ms-transition: background 1000ms;
+  -o-transition: background 1000ms;
+  transition: background 1000ms;
   color: #fff;
   padding: 0.5em 1em;
 }
@@ -413,7 +426,42 @@ form label,
 #main .info .social .show-phone {
   font-size: x-large;
 }
+#overlay {
+  background-color: rgba(0,0,0,0.4);
+  -webkit-transition: all 1000ms;
+  -moz-transition: all 1000ms;
+  -ms-transition: all 1000ms;
+  -o-transition: all 1000ms;
+  transition: all 1000ms;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+body.clean #overlay {
+  background-color: rgba(0,0,0,0);
+}
+body.clean #main .info .avatar {
+  margin-top: -100%;
+}
+body.clean #main .info .social {
+  z-index: 0;
+  -webkit-transition: margin-top 500ms ease-in-out;
+  -moz-transition: margin-top 500ms ease-in-out;
+  -ms-transition: margin-top 500ms ease-in-out;
+  -o-transition: margin-top 500ms ease-in-out;
+  transition: margin-top 500ms ease-in-out;
+  margin-top: 200%;
+}
+body.clean footer {
+  background-color: rgba(0,0,0,0.4);
+}
 footer {
+  z-index: 1;
+  -webkit-transition: all 1000ms;
+  -moz-transition: all 1000ms;
+  -ms-transition: all 1000ms;
+  -o-transition: all 1000ms;
+  transition: all 1000ms;
   position: absolute;
   bottom: 0;
   color: #fff;
@@ -462,11 +510,11 @@ body .thumb {
   -ms-box-shadow: 0px 0px 2px #3e3a3a;
   -o-box-shadow: 0px 0px 2px #3e3a3a;
   box-shadow: 0px 0px 2px #3e3a3a;
-  -webkit-transition: all ease 400ms;
-  -moz-transition: all ease 400ms;
-  -ms-transition: all ease 400ms;
-  -o-transition: all ease 400ms;
-  transition: all ease 400ms;
+  -webkit-transition: all ease 1000ms;
+  -moz-transition: all ease 1000ms;
+  -ms-transition: all ease 1000ms;
+  -o-transition: all ease 1000ms;
+  transition: all ease 1000ms;
 }
 body .thumb.selected {
   -webkit-box-shadow: 0px 0px 20px #e20e16;
@@ -910,11 +958,11 @@ table tbody td span.icon.caution {
   float: left;
 }
 .hideable {
-  -webkit-transition: all ease 400ms;
-  -moz-transition: all ease 400ms;
-  -ms-transition: all ease 400ms;
-  -o-transition: all ease 400ms;
-  transition: all ease 400ms;
+  -webkit-transition: all ease 1000ms;
+  -moz-transition: all ease 1000ms;
+  -ms-transition: all ease 1000ms;
+  -o-transition: all ease 1000ms;
+  transition: all ease 1000ms;
 }
 .hideable:not(.active).to-left {
   margin-left: -100%;

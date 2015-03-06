@@ -25,27 +25,22 @@ class API
 
   _del: (path, callback) -> @execute null, path, "DELETE", callback
 
-class BingAPI extends API
+class ImageAPI extends API
 
   constructor : -> super "http://image-a-day.herokuapp.com/"
 
-  getImage : (location, callback) ->
-    attrs =
-      format   : "js"
-      idx      : 0
-      n        : 1
-      location : location
-    attrString = "?"
-    attrString += "#{key}=#{attrs[key]}&" for key of attrs when attrs[key]?
-    @_get "/image", (response) -> callback? JSON.parse response.response
+  getImage : (callback) -> @_get "/image", (response) ->
+    callback? JSON.parse response.response
 
 aberigle = {}
-aberigle.api = new BingAPI
+aberigle.api = new ImageAPI
 
 window.onload = ->
-  aberigle.api.getImage navigator.language, (response) ->
+  aberigle.api.getImage (response) ->
     document.body.style.backgroundImage = "url(#{response.imageUrl})"
     link = copyright.firstChild
     link.href = response.copyrightLink
     link.text = response.copyright
-    console.log response
+
+    copyright.onmouseenter = -> document.body.classList.add "clean"
+    copyright.onmouseleave = -> document.body.classList.remove "clean"

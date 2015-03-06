@@ -1,5 +1,5 @@
 (function() {
-  var API, BingAPI, aberigle,
+  var API, ImageAPI, aberigle,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
@@ -51,48 +51,40 @@
 
   })();
 
-  BingAPI = (function(superClass) {
-    extend(BingAPI, superClass);
+  ImageAPI = (function(superClass) {
+    extend(ImageAPI, superClass);
 
-    function BingAPI() {
-      BingAPI.__super__.constructor.call(this, "http://image-a-day.herokuapp.com/");
+    function ImageAPI() {
+      ImageAPI.__super__.constructor.call(this, "http://image-a-day.herokuapp.com/");
     }
 
-    BingAPI.prototype.getImage = function(location, callback) {
-      var attrString, attrs, key;
-      attrs = {
-        format: "js",
-        idx: 0,
-        n: 1,
-        location: location
-      };
-      attrString = "?";
-      for (key in attrs) {
-        if (attrs[key] != null) {
-          attrString += key + "=" + attrs[key] + "&";
-        }
-      }
+    ImageAPI.prototype.getImage = function(callback) {
       return this._get("/image", function(response) {
         return typeof callback === "function" ? callback(JSON.parse(response.response)) : void 0;
       });
     };
 
-    return BingAPI;
+    return ImageAPI;
 
   })(API);
 
   aberigle = {};
 
-  aberigle.api = new BingAPI;
+  aberigle.api = new ImageAPI;
 
   window.onload = function() {
-    return aberigle.api.getImage(navigator.language, function(response) {
+    return aberigle.api.getImage(function(response) {
       var link;
       document.body.style.backgroundImage = "url(" + response.imageUrl + ")";
       link = copyright.firstChild;
       link.href = response.copyrightLink;
       link.text = response.copyright;
-      return console.log(response);
+      copyright.onmouseenter = function() {
+        return document.body.classList.add("clean");
+      };
+      return copyright.onmouseleave = function() {
+        return document.body.classList.remove("clean");
+      };
     });
   };
 
