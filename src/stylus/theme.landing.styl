@@ -1,3 +1,7 @@
+TRANSPARENT_BLACK = rgba(0,0,0,0.4)
+body
+  overflow hidden
+
 #main
   position absolute
   margin-top 15%
@@ -6,14 +10,16 @@
   .info
     .avatar
       width 200px
+      transition margin-top (TRANSITION/2) ease-in-out
 
     .social
       text-align center
       color white
       font-size xx-large
+      transition margin-top (TRANSITION*(2/3)) ease-in-out
 
       a
-        transition all 400ms
+        transition background TRANSITION
         color white
         padding .5em 1em
 
@@ -32,7 +38,34 @@
       .show-phone
         font-size x-large
 
+#overlay
+  background-color TRANSPARENT_BLACK
+  transition all TRANSITION
+  position absolute
+  width 100%
+  height 100%
+
+body.clean
+  #overlay
+    background-color rgba(0,0,0,0)
+
+  #main
+    .info
+      .avatar
+        margin-top -100%
+
+      .social
+        z-index 0
+        transition margin-top (TRANSITION/2) ease-in-out
+        margin-top 200%
+
+  footer
+    background-color TRANSPARENT_BLACK
+
+
 footer
+  z-index 1
+  transition all TRANSITION
   position absolute
   bottom 0
   color white

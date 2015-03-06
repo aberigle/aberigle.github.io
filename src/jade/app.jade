@@ -13,7 +13,7 @@ head
   link(rel="stylesheet", href="/dependencies/tuktuk/tuktuk.icons.css")
   link(rel="stylesheet", href="/static/css/app.css")
 body.background-image
-  div.full-width.full-height.background-image.absolute(style="background-color:rgba(0,0,0,0.4)")
+  div.background-image#overlay
   section#main.full-width
     div.centered.info
       div.avatar.centered
@@ -31,10 +31,10 @@ body.background-image
           a.icon.github(href="https://github.com/aberigle",target="_blank")
           a.icon.linkedin(href="https://linkedin.com/in/aberigle",target="_blank")
           a.icon.envelope-alt(href="mailto:a.berzosa.iglesias@gmail.com")
-  footer.padding.full-width
-    div#copyright.on-left
+  footer.full-width
+    div#copyright.on-left.padding
       a(target="_blank")
-    div.on-right.uhurus
+    div.on-right.uhurus.padding
       p made with 
         span.icon.coffee
         |  by 
@@ -44,4 +44,4 @@ body.background-image
   script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js")
   script(src="/dependencies/tuktuk/tuktuk.js")
   script(src="static/js/app.debug.js")
-  script(src="//192.168.0.20:35729/livereload.js")
+  script(src="//localhost:35729/livereload.js")
