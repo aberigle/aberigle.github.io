@@ -13,7 +13,6 @@ class API
         callback? event.target
 
     xhr.open method, @path + path, true
-    # xhr.setRequestHeader("x-requested-with", "XMLHttpRequest")
     if method in ["POST","PUT", "PATCH"] then xhr.send JSON.stringify message
     else xhr.send()
 
@@ -32,15 +31,46 @@ class ImageAPI extends API
   getImage : (callback) -> @_get "/image", (response) ->
     callback? JSON.parse response.response
 
-aberigle = {}
-aberigle.api = new ImageAPI
+class LastFM extends API
+
+  constructor : (key) ->
+    url = "http://ws.audioscrobbler.com/2.0/?format=json"
+    url += "&api_key=#{key}"
+    super url
+
+  paramsToString = (params) ->
+    string = ""
+    for key of params then string += "&#{key}=#{params[key]}"
+    string
+
+  getNowPlaying : (user, callback) ->
+    url = paramsToString
+      method  : "user.getrecenttracks"
+      user    : user
+      limit   : 1
+
+    @_get url, (response) ->
+      response = JSON.parse(response.response).recenttracks
+      if Object::toString.call(response.track) is "[object Array]"
+        callback? response.track[0]
+      else callback?()
+
+window.aberigle = aberigle = {}
+aberigle.api =
+  image  : new ImageAPI
+  lastfm : new LastFM "9ad1ebab368b74b48c4fbd6cf095087e"
 
 window.onload = ->
-  aberigle.api.getImage (response) ->
-    document.body.style.backgroundImage = "url(#{response.imageUrl})"
-    link = copyright.firstChild
-    link.href = response.copyrightLink
-    link.text = response.copyright
+  drawTrack = (track) ->
+    alert track.name
 
-    copyright.onmouseenter = -> document.body.classList.add "clean"
-    copyright.onmouseleave = -> document.body.classList.remove "clean"
+  aberigle.api.lastfm.getNowPlaying "jayle23", (track) ->
+    if track? then drawTrack track
+    else aberigle.api.image.getImage (response) ->
+      document.body.style.backgroundImage = "url(#{response.imageUrl})"
+      link = copyright.firstChild
+      link.href = response.copyrightLink
+      link.text = response.copyright
+
+      copyright.onmouseenter = -> document.body.classList.add "clean"
+      copyright.onmouseleave = -> document.body.classList.remove "clean"
