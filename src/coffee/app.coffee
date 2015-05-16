@@ -1,5 +1,7 @@
 console.log "Hay there, you can find me @aberigle"
 
+window.isArray = (object) -> Object::toString.call(object) is "[object Array]"
+
 class API
 
   path : ""
@@ -51,7 +53,7 @@ class LastFM extends API
 
     @_get url, (response) ->
       response = JSON.parse(response.response).recenttracks
-      if Object::toString.call(response.track) is "[object Array]"
+      if response.track? and isArray response.track
         callback? response.track[0]
       else callback?()
 
@@ -62,15 +64,20 @@ aberigle.api =
 
 window.onload = ->
   drawTrack = (track) ->
-    alert track.name
+    link = copyright.firstChild
+    link.text = track.name + " - " + track.artist["#text"]
+    link.href = track.url
+    console.log track
+
+  drawImage = (response) ->
+    document.body.style.backgroundImage = "url(#{response.imageUrl})"
+    link = copyright.firstChild
+    link.href = response.copyrightLink
+    link.text = response.copyright
+
+    copyright.onmouseenter = -> document.body.classList.add "clean"
+    copyright.onmouseleave = -> document.body.classList.remove "clean"
 
   aberigle.api.lastfm.getNowPlaying "jayle23", (track) ->
     if track? then drawTrack track
-    else aberigle.api.image.getImage (response) ->
-      document.body.style.backgroundImage = "url(#{response.imageUrl})"
-      link = copyright.firstChild
-      link.href = response.copyrightLink
-      link.text = response.copyright
-
-      copyright.onmouseenter = -> document.body.classList.add "clean"
-      copyright.onmouseleave = -> document.body.classList.remove "clean"
+    else aberigle.api.image.getImage drawImage
