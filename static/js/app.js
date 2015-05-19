@@ -1,5 +1,5 @@
 /*
-  app v0.3.0 - 19/5/2015
+  app v0.3.1 - 19/5/2015
 
   Author: aberigle - a.berzosa.iglesias@gmail.com
 */
