@@ -16,10 +16,13 @@ head
   link(rel="stylesheet", href="/dependencies/tuktuk/tuktuk.css")
   link(rel="stylesheet", href="/dependencies/tuktuk/tuktuk.icons.css")
   link(rel="stylesheet", href="/static/css/app.css")
-body.background-image
-  div.background-image#overlay
+body
+  .background-image.full-size#overlay
+  .background-image.full-size.background-container
+    .background-image.full-size#background
+    
   section#main.full-width
-    div.centered.info
+    div.info      
       div.avatar.centered
         img.responsive.round(src="https://avatars3.githubusercontent.com/u/3426238")
       div.social.padding-top.margin-top
@@ -35,9 +38,14 @@ body.background-image
           a.icon.github(href="https://github.com/aberigle",target="_blank")
           a.icon.linkedin(href="https://linkedin.com/in/aberigle",target="_blank")
           a.icon.envelope-alt(href="mailto:a.berzosa.iglesias@gmail.com")
+  section#lastfm.absolute.full-width
+    div.centered
+      img.responsive
+      p
   footer.full-width
-    div#copyright.on-left.padding
-      a(target="_blank")
+    div#copyright.on-left
+      img.margin-top.margin-left.margin-right
+      a(target="_blank").padding-top.padding-bottom
     div.on-right.uhurus.padding
       p made with 
         span.icon.coffee
@@ -47,5 +55,5 @@ body.background-image
   
   script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js")
   script(src="/dependencies/tuktuk/tuktuk.js")
-  script(src="static/js/app.js")
+  script(src="static/js/app.debug.js")
   script(src="//localhost:35729/livereload.js")

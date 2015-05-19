@@ -63,21 +63,34 @@ aberigle.api =
   lastfm : new LastFM "9ad1ebab368b74b48c4fbd6cf095087e"
 
 window.onload = ->
+
+  copyright.onmouseenter = -> document.body.classList.add "clean"
+  copyright.onmouseleave = -> document.body.classList.remove "clean"
+
   drawTrack = (track) ->
-    link = copyright.firstChild
+    unless track? then return false
+    link = copyright.children[1]
     link.text = track.name + " - " + track.artist["#text"]
-    link.href = track.url
-    console.log track
+    link.href = "http://www.last.fm/user/Jayle23"
+    imageUrl = track.image[track.image.length - 1]["#text"]
+    if imageUrl is "" then return false
+    background.style.backgroundImage = "url(#{imageUrl})"
+    equalizer = copyright.children[0]
+    equalizer.src = './static/images/equalizer.gif'
+
+    lastfm = window.lastfm.children[0]
+    lastfm.firstChild.src = imageUrl
+    lastfm.children[1].innerText = track.name + "\n" + track.artist["#text"]
+
+    document.body.classList.add "lastfm"
+    return true
 
   drawImage = (response) ->
-    document.body.style.backgroundImage = "url(#{response.imageUrl})"
-    link = copyright.firstChild
+    background.style.backgroundImage = "url(#{response.imageUrl})"
+    link = copyright.children[1]
     link.href = response.copyrightLink
     link.text = response.copyright
 
-    copyright.onmouseenter = -> document.body.classList.add "clean"
-    copyright.onmouseleave = -> document.body.classList.remove "clean"
-
   aberigle.api.lastfm.getNowPlaying "jayle23", (track) ->
-    if track? then drawTrack track
-    else aberigle.api.image.getImage drawImage
+    unless drawTrack(track)
+      aberigle.api.image.getImage drawImage
