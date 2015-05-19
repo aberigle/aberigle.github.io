@@ -376,35 +376,95 @@ form label,
 body {
   overflow: hidden;
 }
+body.lastfm .background-container {
+  -webkit-transition: all 1000ms;
+  -moz-transition: all 1000ms;
+  -ms-transition: all 1000ms;
+  -o-transition: all 1000ms;
+  transition: all 1000ms;
+  -webkit-filter: blur(0.5em);
+  -moz-filter: blur(0.5em);
+  -ms-filter: blur(0.5em);
+  -o-filter: blur(0.5em);
+  filter: blur(0.5em);
+}
+body:not(.lastfm) #lastfm {
+  display: none;
+}
+body.clean.lastfm .background-container {
+  -webkit-filter: blur(1em);
+  -moz-filter: blur(1em);
+  -ms-filter: blur(1em);
+  -o-filter: blur(1em);
+  filter: blur(1em);
+}
+body.clean.lastfm #lastfm div {
+  opacity: 1;
+  margin-top: 0;
+  -webkit-box-shadow: 0 0 2em #000;
+  -moz-box-shadow: 0 0 2em #000;
+  -ms-box-shadow: 0 0 2em #000;
+  -o-box-shadow: 0 0 2em #000;
+  box-shadow: 0 0 2em #000;
+}
+body.clean #overlay {
+  background-color: rgba(0,0,0,0);
+}
+body.clean #main .info {
+  margin-top: -2em;
+  opacity: 0;
+}
+body.clean footer {
+  background-color: rgba(0,0,0,0.4);
+}
+#lastfm {
+  position: absolute;
+  width: 100%;
+  margin-top: 10%;
+}
+#lastfm div {
+  -webkit-transition: all 333.3333333333333ms ease-in-out;
+  -moz-transition: all 333.3333333333333ms ease-in-out;
+  -ms-transition: all 333.3333333333333ms ease-in-out;
+  -o-transition: all 333.3333333333333ms ease-in-out;
+  transition: all 333.3333333333333ms ease-in-out;
+  opacity: 0;
+  margin-top: 2em;
+  width: 300px;
+}
+#lastfm div p {
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  text-align: center;
+  padding: 1em;
+  font-size: xx-large;
+}
 #main {
   position: absolute;
   margin-top: 15%;
   z-index: 1;
 }
+#main .info {
+  -webkit-transition: all 333.3333333333333ms ease-in-out;
+  -moz-transition: all 333.3333333333333ms ease-in-out;
+  -ms-transition: all 333.3333333333333ms ease-in-out;
+  -o-transition: all 333.3333333333333ms ease-in-out;
+  transition: all 333.3333333333333ms ease-in-out;
+}
 #main .info .avatar {
   width: 200px;
-  -webkit-transition: margin-top 500ms ease-in-out;
-  -moz-transition: margin-top 500ms ease-in-out;
-  -ms-transition: margin-top 500ms ease-in-out;
-  -o-transition: margin-top 500ms ease-in-out;
-  transition: margin-top 500ms ease-in-out;
 }
 #main .info .social {
   text-align: center;
   color: #fff;
   font-size: xx-large;
-  -webkit-transition: margin-top 666.666666666667ms ease-in-out;
-  -moz-transition: margin-top 666.666666666667ms ease-in-out;
-  -ms-transition: margin-top 666.666666666667ms ease-in-out;
-  -o-transition: margin-top 666.666666666667ms ease-in-out;
-  transition: margin-top 666.666666666667ms ease-in-out;
 }
 #main .info .social a {
-  -webkit-transition: background 1000ms;
-  -moz-transition: background 1000ms;
-  -ms-transition: background 1000ms;
-  -o-transition: background 1000ms;
-  transition: background 1000ms;
+  -webkit-transition: background 333.3333333333333ms;
+  -moz-transition: background 333.3333333333333ms;
+  -ms-transition: background 333.3333333333333ms;
+  -o-transition: background 333.3333333333333ms;
+  transition: background 333.3333333333333ms;
   color: #fff;
   padding: 0.5em 1em;
 }
@@ -426,6 +486,11 @@ body {
 #main .info .social .show-phone {
   font-size: x-large;
 }
+.full-size {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
 #overlay {
   background-color: rgba(0,0,0,0.4);
   -webkit-transition: all 1000ms;
@@ -434,26 +499,10 @@ body {
   -o-transition: all 1000ms;
   transition: all 1000ms;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  z-index: 1;
 }
-body.clean #overlay {
-  background-color: rgba(0,0,0,0);
-}
-body.clean #main .info .avatar {
-  margin-top: -100%;
-}
-body.clean #main .info .social {
-  z-index: 0;
-  -webkit-transition: margin-top 500ms ease-in-out;
-  -moz-transition: margin-top 500ms ease-in-out;
-  -ms-transition: margin-top 500ms ease-in-out;
-  -o-transition: margin-top 500ms ease-in-out;
-  transition: margin-top 500ms ease-in-out;
-  margin-top: 200%;
-}
-body.clean footer {
-  background-color: rgba(0,0,0,0.4);
+#copyright img {
+  height: 1em;
 }
 footer {
   z-index: 1;
