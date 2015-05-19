@@ -1,9 +1,9 @@
 {
   "name": "app",
-  "version": "0.0.0",
+  "version": "0.3.0",
   "author" : {
-    "name" : "_NAME_",
-    "email" : "_EMAIL_"
+    "name" : "aberigle",
+    "email" : "a.berzosa.iglesias@gmail.com"
   },
   "dependencies": {},
   "devDependencies" : {
@@ -18,9 +18,3 @@
     "load-grunt-tasks" : ""
   }
 }
-
-
-
-
-
-

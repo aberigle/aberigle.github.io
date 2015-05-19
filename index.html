@@ -17,10 +17,13 @@
   <link rel="stylesheet" href="/dependencies/tuktuk/tuktuk.icons.css">
   <link rel="stylesheet" href="/static/css/app.css">
 </head>
-<body class="background-image">
-  <div id="overlay" class="background-image"></div>
+<body>
+  <div id="overlay" class="background-image full-size"></div>
+  <div class="background-image full-size background-container">
+    <div id="background" class="background-image full-size"></div>
+  </div>
   <section id="main" class="full-width">
-    <div class="centered info">
+    <div class="info">     
       <div class="avatar centered"><img src="https://avatars3.githubusercontent.com/u/3426238" class="responsive round"></div>
       <div class="social padding-top margin-top">
         <div class="hide-phone"><a href="https://twitter.com/aberigle" target="_blank" class="icon twitter"></a><a href="https://plus.google.com/115171581646420603678" target="_blank" class="icon google-plus"></a><a href="https://github.com/aberigle" target="_blank" class="icon github"></a><a href="https://linkedin.com/in/aberigle" target="_blank" class="icon linkedin"></a><a href="mailto:a.berzosa.iglesias@gmail.com" class="icon envelope-alt"></a></div>
@@ -28,14 +31,19 @@
       </div>
     </div>
   </section>
+  <section id="lastfm" class="absolute full-width">
+    <div class="centered"><img class="responsive">
+      <p></p>
+    </div>
+  </section>
   <footer class="full-width">
-    <div id="copyright" class="on-left padding"><a target="_blank"></a></div>
+    <div id="copyright" class="on-left"><img class="margin-top margin-left margin-right"><a target="_blank" class="padding-top padding-bottom"></a></div>
     <div class="on-right uhurus padding">
       <p>made with <span class="icon coffee"></span> by <a href="http://uhurus.com" target="_blank">uhurus</a></p>
     </div>
   </footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <script src="/dependencies/tuktuk/tuktuk.js"></script>
-  <script src="static/js/app.js"></script>
+  <script src="static/js/app.debug.js"></script>
   <script src="//localhost:35729/livereload.js"></script>
 </body>
