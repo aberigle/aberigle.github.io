@@ -1,4 +1,4 @@
-console.log "Hay there, you can find me @aberigle"
+console.log "👋 Hay there, you can find me @aberigle (https://twitter.com/aberigle) 👍"
 
 window.isArray = (object) -> Object::toString.call(object) is "[object Array]"
 
