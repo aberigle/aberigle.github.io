@@ -101,12 +101,15 @@
         limit: 1
       });
       return this._get(url, function(response) {
+        var ref, track;
         response = JSON.parse(response.response).recenttracks;
         if ((response.track != null) && isArray(response.track)) {
-          return typeof callback === "function" ? callback(response.track[0]) : void 0;
-        } else {
-          return typeof callback === "function" ? callback() : void 0;
+          track = response.track[0];
+          if (((ref = track["@attr"]) != null ? ref.nowplaying : void 0) === "true") {
+            return typeof callback === "function" ? callback(track) : void 0;
+          }
         }
+        return typeof callback === "function" ? callback() : void 0;
       });
     };
 
@@ -134,14 +137,14 @@
       if (track == null) {
         return false;
       }
-      link = copyright.children[1];
-      link.text = track.name + " - " + track.artist["#text"];
-      link.href = "http://www.last.fm/user/Jayle23";
       imageUrl = track.image[track.image.length - 1]["#text"];
       if (imageUrl === "") {
         return false;
       }
       background.style.backgroundImage = "url(" + imageUrl + ")";
+      link = copyright.children[1];
+      link.text = track.name + " - " + track.artist["#text"];
+      link.href = "http://www.last.fm/user/Jayle23";
       equalizer = copyright.children[0];
       equalizer.src = './static/images/equalizer.gif';
       lastfm = window.lastfm.children[0];
