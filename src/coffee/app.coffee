@@ -54,8 +54,9 @@ class LastFM extends API
     @_get url, (response) ->
       response = JSON.parse(response.response).recenttracks
       if response.track? and isArray response.track
-        callback? response.track[0]
-      else callback?()
+        track = response.track[0]
+        if track["@attr"]?.nowplaying is "true" then return callback? track
+      return callback?()
 
 window.aberigle = aberigle = {}
 aberigle.api =
@@ -69,12 +70,14 @@ window.onload = ->
 
   drawTrack = (track) ->
     unless track? then return false
-    link = copyright.children[1]
-    link.text = track.name + " - " + track.artist["#text"]
-    link.href = "http://www.last.fm/user/Jayle23"
     imageUrl = track.image[track.image.length - 1]["#text"]
     if imageUrl is "" then return false
     background.style.backgroundImage = "url(#{imageUrl})"
+
+    link = copyright.children[1]
+    link.text = track.name + " - " + track.artist["#text"]
+    link.href = "http://www.last.fm/user/Jayle23"
+
     equalizer = copyright.children[0]
     equalizer.src = './static/images/equalizer.gif'
 
@@ -92,5 +95,4 @@ window.onload = ->
     link.text = response.copyright
 
   aberigle.api.lastfm.getNowPlaying "jayle23", (track) ->
-    unless drawTrack(track)
-      aberigle.api.image.getImage drawImage
+    unless drawTrack(track) then aberigle.api.image.getImage drawImage
