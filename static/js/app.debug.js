@@ -59,7 +59,7 @@
     extend(ImageAPI, superClass);
 
     function ImageAPI() {
-      ImageAPI.__super__.constructor.call(this, "http://image-a-day.herokuapp.com/");
+      ImageAPI.__super__.constructor.call(this, "https://dry-plateau-3558.herokuapp.com/");
     }
 
     ImageAPI.prototype.getImage = function(callback) {
@@ -154,11 +154,12 @@
       return true;
     };
     drawImage = function(response) {
-      var link;
-      background.style.backgroundImage = "url(" + response.imageUrl + ")";
+      var image, link;
+      image = response.images[0];
+      background.style.backgroundImage = "url(" + ('https://bing.com' + image.url) + ")";
       link = copyright.children[1];
-      link.href = response.copyrightLink;
-      return link.text = response.copyright;
+      link.href = image.copyrightlink;
+      return link.text = image.copyright;
     };
     return aberigle.api.lastfm.getNowPlaying("jayle23", function(track) {
       if (!drawTrack(track)) {
