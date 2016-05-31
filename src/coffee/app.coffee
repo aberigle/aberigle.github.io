@@ -28,7 +28,7 @@ class API
 
 class ImageAPI extends API
 
-  constructor : -> super "http://image-a-day.herokuapp.com/"
+  constructor : -> super "https://dry-plateau-3558.herokuapp.com/"
 
   getImage : (callback) -> @_get "/image", (response) ->
     callback? JSON.parse response.response
@@ -89,10 +89,11 @@ window.onload = ->
     return true
 
   drawImage = (response) ->
-    background.style.backgroundImage = "url(#{response.imageUrl})"
+    image = response.images[0]
+    background.style.backgroundImage = "url(#{'https://bing.com' + image.url})"
     link = copyright.children[1]
-    link.href = response.copyrightLink
-    link.text = response.copyright
+    link.href = image.copyrightlink
+    link.text = image.copyright
 
   aberigle.api.lastfm.getNowPlaying "jayle23", (track) ->
     unless drawTrack(track) then aberigle.api.image.getImage drawImage
