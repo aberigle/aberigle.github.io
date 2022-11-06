@@ -1,7 +1,7 @@
 (function() {
   var API, ImageAPI, LastFM, aberigle,
-    extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
-    hasProp = {}.hasOwnProperty;
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   console.log("👋 Hay there, you can find me @aberigle (https://twitter.com/aberigle) 👍");
 
@@ -12,8 +12,8 @@
   API = (function() {
     API.prototype.path = "";
 
-    function API(path1) {
-      this.path = path1;
+    function API(path) {
+      this.path = path;
     }
 
     API.prototype.execute = function(message, path, method, callback) {
@@ -55,8 +55,8 @@
 
   })();
 
-  ImageAPI = (function(superClass) {
-    extend(ImageAPI, superClass);
+  ImageAPI = (function(_super) {
+    __extends(ImageAPI, _super);
 
     function ImageAPI() {
       ImageAPI.__super__.constructor.call(this, "https://dry-plateau-3558.herokuapp.com/");
@@ -72,10 +72,10 @@
 
   })(API);
 
-  LastFM = (function(superClass) {
+  LastFM = (function(_super) {
     var paramsToString;
 
-    extend(LastFM, superClass);
+    __extends(LastFM, _super);
 
     function LastFM(key) {
       var url;
@@ -101,11 +101,11 @@
         limit: 1
       });
       return this._get(url, function(response) {
-        var ref, track;
+        var track, _ref;
         response = JSON.parse(response.response).recenttracks;
         if ((response.track != null) && isArray(response.track)) {
           track = response.track[0];
-          if (((ref = track["@attr"]) != null ? ref.nowplaying : void 0) === "true") {
+          if (((_ref = track["@attr"]) != null ? _ref.nowplaying : void 0) === "true") {
             return typeof callback === "function" ? callback(track) : void 0;
           }
         }
@@ -143,13 +143,13 @@
       }
       background.style.backgroundImage = "url(" + imageUrl + ")";
       link = copyright.children[1];
-      link.text = track.name + " - " + track.artist["#text"];
+      link.innerHTML = track.name + " <br> " + ("<small>" + track.artist["#text"] + "</small>");
       link.href = "http://www.last.fm/user/Jayle23";
       equalizer = copyright.children[0];
       equalizer.src = './static/images/equalizer.gif';
       lastfm = window.lastfm.children[0];
       lastfm.firstChild.src = imageUrl;
-      lastfm.children[1].innerText = track.name + "\n" + track.artist["#text"];
+      lastfm.children[1].innerHTML = "" + track.name + "<br>\n<small>" + track.artist["#text"] + "</small>";
       document.body.classList.add("lastfm");
       return true;
     };
