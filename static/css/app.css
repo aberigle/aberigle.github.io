@@ -376,6 +376,9 @@ form label,
 body {
   overflow: hidden;
 }
+body.lastfm.clean#main {
+  display: none;
+}
 body.lastfm .background-container {
   -webkit-transition: all 1000ms;
   -moz-transition: all 1000ms;
@@ -423,6 +426,12 @@ body.clean footer {
   margin-top: 10%;
 }
 #lastfm div {
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  -ms-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
+  border-radius: 0.3em;
+  background: rgba(0,0,0,0.5);
   -webkit-transition: all 333.3333333333333ms ease-in-out;
   -moz-transition: all 333.3333333333333ms ease-in-out;
   -ms-transition: all 333.3333333333333ms ease-in-out;
@@ -434,10 +443,8 @@ body.clean footer {
 }
 #lastfm div p {
   color: #fff;
-  background: rgba(0,0,0,0.5);
-  text-align: center;
   padding: 1em;
-  font-size: xx-large;
+  font-size: x-large;
 }
 #main {
   position: absolute;
@@ -768,6 +775,9 @@ nav[data-tuktuk=menu] > a small {
 }
 
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700");
+small {
+  font-size: 0.7em;
+}
 
 table {
   background: #fff;
