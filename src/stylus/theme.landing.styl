@@ -4,6 +4,9 @@ body
   overflow hidden
 
   &.lastfm
+    &.clean#main
+      display none
+
     .background-container
       transition all TRANSITION
       vendor('filter', blur(.5em))
@@ -38,16 +41,16 @@ body
   width 100%
   margin-top 10%
   div
+    border-radius .3em
+    background rgba(0,0,0,0.5)
     transition all (TRANSITION/3) ease-in-out
     opacity 0
     margin-top 2em
     width 300px
     p
       color white
-      background rgba(0,0,0,0.5)
-      text-align center
       padding 1em
-      font-size xx-large
+      font-size x-large
 
 
 #main

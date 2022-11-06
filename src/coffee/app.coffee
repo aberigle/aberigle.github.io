@@ -75,7 +75,7 @@ window.onload = ->
     background.style.backgroundImage = "url(#{imageUrl})"
 
     link = copyright.children[1]
-    link.text = track.name + " - " + track.artist["#text"]
+    link.innerHTML = track.name + " <br> " + "<small>#{track.artist["#text"]}</small>"
     link.href = "http://www.last.fm/user/Jayle23"
 
     equalizer = copyright.children[0]
@@ -83,7 +83,10 @@ window.onload = ->
 
     lastfm = window.lastfm.children[0]
     lastfm.firstChild.src = imageUrl
-    lastfm.children[1].innerText = track.name + "\n" + track.artist["#text"]
+    lastfm.children[1].innerHTML = """
+      #{track.name}<br>
+      <small>#{track.artist["#text"]}</small>
+      """
 
     document.body.classList.add "lastfm"
     return true
