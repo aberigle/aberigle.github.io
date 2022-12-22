@@ -79,7 +79,7 @@
 
     function LastFM(key) {
       var url;
-      url = "http://ws.audioscrobbler.com/2.0/?format=json";
+      url = "https://ws.audioscrobbler.com/2.0/?format=json";
       url += "&api_key=" + key;
       LastFM.__super__.constructor.call(this, url);
     }
