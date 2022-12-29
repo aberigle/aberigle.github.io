@@ -28,7 +28,7 @@ class API
 
 class ImageAPI extends API
 
-  constructor : -> super "https://dry-plateau-3558.herokuapp.com/"
+  constructor : -> super "http://home.csvifier.com:8081"
 
   getImage : (callback) -> @_get "/image", (response) ->
     callback? JSON.parse response.response
@@ -36,7 +36,7 @@ class ImageAPI extends API
 class LastFM extends API
 
   constructor : (key) ->
-    url = "http://ws.audioscrobbler.com/2.0/?format=json"
+    url = "https://ws.audioscrobbler.com/2.0/?format=json"
     url += "&api_key=#{key}"
     super url
 
@@ -76,7 +76,7 @@ window.onload = ->
 
     link = copyright.children[1]
     link.innerHTML = track.name + " <br> " + "<small>#{track.artist["#text"]}</small>"
-    link.href = "http://www.last.fm/user/Jayle23"
+    link.href = "https://www.last.fm/user/Jayle23"
 
     equalizer = copyright.children[0]
     equalizer.src = './static/images/equalizer.gif'
