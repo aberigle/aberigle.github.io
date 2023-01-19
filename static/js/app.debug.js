@@ -55,7 +55,7 @@
 
   ImageAPI = class ImageAPI extends API {
     constructor() {
-      super("http://home.csvifier.com:8081");
+      super("https://image-api-chi.vercel.app/api");
     }
 
     getImage(callback) {
