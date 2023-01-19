@@ -28,7 +28,7 @@ class API
 
 class ImageAPI extends API
 
-  constructor : -> super "http://home.csvifier.com:8081"
+  constructor : -> super "https://image-api-chi.vercel.app/api"
 
   getImage : (callback) -> @_get "/image", (response) ->
     callback? JSON.parse response.response
