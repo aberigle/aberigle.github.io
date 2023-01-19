@@ -1,20 +1,20 @@
 {
   "name": "app",
-  "version": "0.3.4",
-  "author" : {
-    "name" : "aberigle",
-    "email" : "a.berzosa.iglesias@gmail.com"
+  "version": "0.3.5",
+  "author": {
+    "name": "aberigle",
+    "email": "a.berzosa.iglesias@gmail.com"
   },
   "dependencies": {},
-  "devDependencies" : {
-    "grunt" : "",
-    "grunt-contrib-coffee" : "",
-    "grunt-contrib-stylus" : "",
-    "grunt-contrib-jade" : "",
-    "grunt-contrib-uglify" : "",
-    "grunt-contrib-concat" : "",
-    "grunt-contrib-watch" : "",
-    "grunt-contrib-copy" : "",
-    "load-grunt-tasks" : ""
+  "devDependencies": {
+    "grunt": "",
+    "grunt-contrib-coffee": "",
+    "grunt-contrib-stylus": "",
+    "grunt-contrib-jade": "",
+    "grunt-contrib-uglify": "",
+    "grunt-contrib-concat": "",
+    "grunt-contrib-watch": "",
+    "grunt-contrib-copy": "",
+    "load-grunt-tasks": ""
   }
 }
