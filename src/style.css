@@ -44,7 +44,9 @@ body {
 }
 
 #main {
+  transition: all 300ms;
   z-index: 2;
+  opacity: 1;
   margin: 10em auto;
 }
 
@@ -140,4 +142,13 @@ footer {
   border-radius: 10%;
   padding: .2em 0;
   box-shadow: 0 0 .3em #00a362;
+}
+
+.clean #main {
+  margin-top: -2em;
+  opacity: 0;
+}
+
+.clean #overlay {
+  background-color: transparent;
 }
