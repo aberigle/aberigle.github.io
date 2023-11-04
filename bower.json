@@ -1,7 +1,0 @@
-{
-  "name": "package",
-  "version": "0.0.0",
-  "dependencies": {
-    "tuktuk" : "aberigle/package-tuktuk#0.8.1"
-  }
-}

@@ -1,56 +1,22 @@
-<!DOCTYPE html>
-<head>
-  <title>😎 @aberigle - Alejandro Berzosa Iglesias</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="author" content="@aberigle">
-  <meta property="og:title" content="Alejandro Berzosa">
-  <meta property="og:url" content="http://aberigle.com">
-  <meta property="og:image" content="https://avatars3.githubusercontent.com/u/3426238">
-  <meta property="twitter:creator" content="@aberigle">
-  <meta property="twitter:site" content="http://aberigle.com">
-  <meta property="twitter:card" content="summary">
-  <meta http-equiv="Content-Language" content="es">
-  <meta name="revisit-after" content="1 days">
-  <meta name="distribution" content="global">
-  <link rel="stylesheet" href="/dependencies/tuktuk/tuktuk.css">
-  <link rel="stylesheet" href="/dependencies/tuktuk/tuktuk.icons.css">
-  <link rel="stylesheet" href="/static/css/app.css">
-</head>
-<body>
-  <div id="overlay" class="background-image full-size"></div>
-  <div class="background-image full-size background-container">
-    <div id="background" class="background-image full-size"></div>
-  </div>
-  <section id="main" class="full-width">
-    <div class="info">
-      <div class="avatar centered"><img src="https://avatars3.githubusercontent.com/u/3426238" class="responsive round"></div>
-      <div class="social padding-top margin-top">
-        <div class="hide-phone"><a href="https://twitter.com/aberigle" target="_blank" class="icon twitter"></a><a href="https://github.com/aberigle" target="_blank" class="icon github"></a><a href="https://linkedin.com/in/aberigle" target="_blank" class="icon linkedin"></a><a href="mailto:aberigle@uhurus.com" class="icon envelope-alt"></a></div>
-        <div class="show-phone"><a href="https://twitter.com/aberigle" target="_blank" class="icon twitter"></a><a href="https://github.com/aberigle" target="_blank" class="icon github"></a><a href="https://linkedin.com/in/aberigle" target="_blank" class="icon linkedin"></a><a href="mailto:aberigle@uhurus.com" class="icon envelope-alt"></a></div>
-      </div>
-    </div>
-  </section>
-  <section id="lastfm" class="absolute full-width">
-    <div class="centered"><img class="responsive">
-      <p style="line-height:1em"></p>
-    </div>
-  </section>
-  <footer class="full-width">
-    <div id="copyright" class="on-left"><img class="margin-top margin-left margin-right on-left"><a target="_blank" style="line-height:.9em" class="on-left margin-top"></a></div>
-    <div class="on-right uhurus padding">
-      <p>made with<span class="icon coffee"></span> by<a href="http://uhurus.com" target="_blank">uhurus</a></p>
-    </div>
-  </footer>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script src="/dependencies/tuktuk/tuktuk.js"></script>
-  <script src="static/js/app.debug.js"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MMPYD4TWT6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MMPYD4TWT6');
-</script>
-</body>
+<!doctype html>
+<html>
+  <head>
+    <title>😎 @aberigle - Alejandro Berzosa Iglesias</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="@aberigle">
+    <meta property="og:title" content="Alejandro Berzosa">
+    <meta property="og:url" content="http://aberigle.com">
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/3426238">
+    <meta property="twitter:creator" content="@aberigle">
+    <meta property="twitter:site" content="http://aberigle.com">
+    <meta property="twitter:card" content="summary">
+    <meta http-equiv="Content-Language" content="es">
+    <meta name="revisit-after" content="1 days">
+    <meta name="distribution" content="global">
+  </head>
+  <body>
+    <pug src="./src/index.pug" />
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
