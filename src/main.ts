@@ -15,11 +15,13 @@ async function checkListening() {
 }
 
 async function checkBackground() {
-  const background = await getImage()
-  const element : HTMLElement = document.querySelector<HTMLElement>("#background")!
+  const image = await getImage()
+  const element   : HTMLElement       = document.querySelector<HTMLElement>("#background")!
+  const copyright : HTMLAnchorElement = document.querySelector<HTMLAnchorElement>("#copyright")!
 
-  element.style.backgroundImage = `url(#{'https://bing.com' + image.url})`
-  console.log(background)
+  element.style.backgroundImage = `url('https://bing.com${image.url}}')`
+  copyright.href = image.copyrightlink
+  copyright.textContent = image.copyright
 }
 
 checkListening()
