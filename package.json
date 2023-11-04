@@ -1,20 +1,20 @@
 {
-  "name": "app",
-  "version": "0.3.5",
-  "author": {
-    "name": "aberigle",
-    "email": "a.berzosa.iglesias@gmail.com"
+  "name": "aberigle.github.io",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
-  "dependencies": {},
   "devDependencies": {
-    "grunt": "",
-    "grunt-contrib-coffee": "",
-    "grunt-contrib-stylus": "",
-    "grunt-contrib-jade": "",
-    "grunt-contrib-uglify": "",
-    "grunt-contrib-concat": "",
-    "grunt-contrib-watch": "",
-    "grunt-contrib-copy": "",
-    "load-grunt-tasks": ""
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "vite-plugin-pug": "^0.3.2"
   }
 }
