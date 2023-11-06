@@ -1,0 +1,71 @@
+#main {
+  transition: all 300ms;
+  z-index: 2;
+  opacity: 1;
+  margin: 5em auto;
+}
+
+.avatar {
+  border-radius: 5em;
+  margin: 2em auto;
+  width: 15em;
+}
+
+.avatar img {
+  cursor: pointer;
+  margin: auto;
+  transition: all 300ms;
+  width: 100%;
+  border-radius: 50%;
+  border: .3em solid white;
+}
+
+.avatar img:hover {
+  box-shadow: 0 0 1em white;
+  /* border: 1px solid black; */
+
+}
+
+.social {
+  text-align: center;
+  display: flex;
+  width: 100%;
+}
+
+a.icon {
+  padding: .6em 2em;
+  transition: all 300ms;
+  flex-grow: 1;
+  place-content: center;
+  display: flex;
+  border-radius: 5%;
+}
+
+a.twitter:hover {
+  background: #4099ff;
+  box-shadow: 0 0 1em #4099ff;
+}
+a.github:hover{
+  background: black;
+  box-shadow: 0 0 1em black;
+}
+a.google-plus:hover{
+  background: #db4b39;
+  box-shadow: 0 0 1em #db4b39;
+}
+a.linkedin:hover{
+  background: #0077B5;
+  box-shadow: 0 0 1em #0077B5;
+}
+a.mail:hover{
+  background: #00a362;
+  box-shadow: 0 0 1em #00a362;
+}
+
+a.icon svg {
+  width: 1.6em;
+}
+
+.icon svg {
+  fill: white;
+}

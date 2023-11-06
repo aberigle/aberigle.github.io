@@ -1,0 +1,51 @@
+#lastfm.show {
+  transition: all 300ms;
+
+  display: flex;
+  flex-direction: row;
+  /* align-items: flex-end; */
+
+  cursor: pointer;
+  position: absolute;
+  bottom: 4em;
+  left: 2em;
+  padding: .5em;
+  background-color: #273443;
+  box-shadow: 0 0 .3em #273443;
+  border-radius: 3%;
+}
+
+#lastfm .info {
+  font-size: .8em;
+  margin-left: 1em;
+  margin-top: .5em;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#lastfm:hover {
+  box-shadow: 0 0 .5em #273443;
+}
+
+#lastfm .art {
+  transition: height 300ms;
+  border-radius: 3%;
+  height: 5em;
+  box-shadow: 0 0 .3em #273443;
+}
+
+#lastfm:hover .art {
+  height: 15em;
+}
+
+#lastfm .eq {
+  align-self: flex-end;
+  height: 2em;
+  margin-left: 1em;
+}
+
+.clean #lastfm, #lastfm:not(.show) {
+  margin-bottom: -10em;
+  opacity: 0;
+}

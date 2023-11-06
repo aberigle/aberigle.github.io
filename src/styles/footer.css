@@ -1,0 +1,59 @@
+
+footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  transition: all 300ms;
+  position: absolute;
+  bottom: 0;
+  color: white;
+}
+
+#copyright {
+  margin-left: 1em;
+  color: white;
+  text-decoration: none;
+}
+
+.uhurus {
+  margin-right: 1em;
+}
+
+.uhurus .icon {
+  display: inline-block;
+  width: 1em;
+}
+
+.uhurus a {
+  background-color: #00a362;
+  color: white;
+  font-weight: 400;
+
+  text-decoration: none;
+  padding: 0;
+  transition: all 300ms;
+}
+
+.uhurus a:hover {
+  background-color: #00a362;
+  color:white;
+  border-radius: 10%;
+  padding: .2em 0;
+  box-shadow: 0 0 .3em #00a362;
+}
+
+.clean #main {
+  margin-top: -2em;
+  opacity: 0;
+}
+
+.clean #overlay {
+  background-color: transparent;
+}
+
+.clean footer {
+  background-color: rgba(0, 0, 0, .4);
+  box-shadow: 0 0 2em 2em rgba(0, 0, 0, .4);
+}
