@@ -43,5 +43,40 @@ async function checkBackground() {
   return true
 }
 
+function animateElement(element: HTMLElement, delay: number, duration : number) {
+  return setTimeout(() => {
+    element.classList.toggle("active")
+    return setTimeout(() => element.classList.toggle("active"), duration)
+  }, delay)
+}
+
+function animate(random: boolean) {
+  const avatar : HTMLElement        = document.querySelector<HTMLElement>(".avatar")!
+  const list   : Array<HTMLElement> = Array.from(document.querySelectorAll<HTMLElement>(".social .icon"))
+
+  const hover: boolean = !!list.find(el => el.matches(":hover"))
+
+  if (!hover) {
+    let time = 0,
+        next = 0
+
+    for (let item of list) {
+      if (random) {
+        next = Math.random() * 1000
+      } else {
+        next = time += 100
+      }
+
+      animateElement(item, next, 200)
+    }
+
+    animateElement(avatar, time + 150, 500)
+  }
+
+  return setTimeout(() => animate(!hover), hover ? 0 : Math.random() * 20000)
+}
+
 checkListening()
 checkBackground()
+
+setTimeout(animate, 1500)

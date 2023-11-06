@@ -20,10 +20,8 @@
   border: .3em solid white;
 }
 
-.avatar img:hover {
+.avatar img:hover, .avatar.active img {
   box-shadow: 0 0 1em white;
-  /* border: 1px solid black; */
-
 }
 
 .social {
@@ -41,23 +39,23 @@ a.icon {
   border-radius: 5%;
 }
 
-a.twitter:hover {
+a.twitter:hover, a.twitter.active {
   background: #4099ff;
   box-shadow: 0 0 1em #4099ff;
 }
-a.github:hover{
+a.github:hover, a.github.active{
   background: black;
   box-shadow: 0 0 1em black;
 }
-a.google-plus:hover{
+a.google-plus:hover, a.google-plus.active {
   background: #db4b39;
   box-shadow: 0 0 1em #db4b39;
 }
-a.linkedin:hover{
+a.linkedin:hover, a.linkedin.active {
   background: #0077B5;
   box-shadow: 0 0 1em #0077B5;
 }
-a.mail:hover{
+a.mail:hover, a.mail.active {
   background: #00a362;
   box-shadow: 0 0 1em #00a362;
 }
