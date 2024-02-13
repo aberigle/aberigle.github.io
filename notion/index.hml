@@ -1,0 +1,4 @@
+<body
+contenteditable
+onload="body.innerHTML = localStorage.getItem('lib') || '<h2>¡Edítame!</h2>'"
+oninput="localStorage.setItem('lib', body.innerHTML)" />
