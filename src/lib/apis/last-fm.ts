@@ -5,13 +5,12 @@ export async function getNowPlaying(user: string) {
   if (!import.meta.env.PROD) return JSON.parse(example)
 
   const uri : URL = new URL(url)
-
+  console.log(user)
   /**
   uri.searchParams.append("format", "json")
   uri.searchParams.append("method", "user.getrecenttracks")
   uri.searchParams.append("user", user)
   uri.searchParams.append("limit", "1")
-  uri.searchParams.append("api_key", "9ad1ebab368b74b48c4fbd6cf095087e")
   */
   
   const response  = await fetch(uri)
