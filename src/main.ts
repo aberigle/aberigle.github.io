@@ -38,7 +38,8 @@ async function checkBackground() {
   element.style.backgroundImage = `url('https://bing.com${url}}')`
 
   copyright.href        = image.copyrightlink
-  copyright.textContent = `${image.title} - ${image.copyright}`
+  copyright.querySelector<HTMLElement>("strong").textContent = image.title
+  copyright.querySelector<HTMLElement>("small").textContent = image.copyright
 
   copyright.onmouseenter = () => document.body.classList.add("clean")
   copyright.onmouseleave = () => document.body.classList.remove("clean")

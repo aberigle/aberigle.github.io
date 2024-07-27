@@ -12,9 +12,12 @@ footer {
 }
 
 #copyright {
+  margin-bottom: 1em;
   margin-left: 1em;
   color: white;
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .uhurus {
