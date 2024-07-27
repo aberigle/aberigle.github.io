@@ -7,8 +7,8 @@
 
   cursor: pointer;
   position: fixed;
-  bottom: 6em;
-  left: 2em;
+  bottom: 5em;
+  right: 2em;
   padding: .5em;
   background-color: #273443;
   box-shadow: 0 0 .3em #273443;
