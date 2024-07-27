@@ -33,7 +33,10 @@ async function checkBackground() {
   const element   : HTMLElement       = document.querySelector<HTMLElement>("#background")!
   const copyright : HTMLAnchorElement = document.querySelector<HTMLAnchorElement>("#copyright")!
 
-  element.style.backgroundImage = `url('https://bing.com${image.url}}')`
+  const url : String = image.url.replaceAll("1920x1080", "UHD")
+
+  element.style.backgroundImage = `url('https://bing.com${url}}')`
+
   copyright.href        = image.copyrightlink
   copyright.textContent = `${image.title} - ${image.copyright}`
 
