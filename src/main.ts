@@ -17,7 +17,7 @@ async function checkListening() {
 
   if (!track) return element.classList.remove("show")
 
-  const img    : HTMLImageElement      = element.querySelector<HTMLImageElement>(".art")!
+  const img    : HTMLImageElement = element.querySelector<HTMLImageElement>(".art")!
   const artist : HTMLElement = element.querySelector<HTMLElement>(".artist")!
   const song   : HTMLElement = element.querySelector<HTMLElement>(".song")!
 
@@ -38,8 +38,11 @@ async function checkBackground() {
   element.style.backgroundImage = `url('https://bing.com${url}}')`
 
   copyright.href        = image.copyrightlink
-  copyright.querySelector<HTMLElement>("strong").textContent = image.title
-  copyright.querySelector<HTMLElement>("small").textContent = image.copyright
+
+  const title = copyright.querySelector<HTMLElement>("strong")!
+  const copy  = copyright.querySelector<HTMLElement>("small")!
+  title.textContent = image.title
+  copy.textContent  = image.copyright
 
   copyright.onmouseenter = () => document.body.classList.add("clean")
   copyright.onmouseleave = () => document.body.classList.remove("clean")
