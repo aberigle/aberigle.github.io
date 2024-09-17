@@ -5,14 +5,15 @@ export async function getNowPlaying(user: string) {
   if (!import.meta.env.PROD) return JSON.parse(example)
 
   const uri : URL = new URL(url)
-  console.log(user)
-  
   uri.searchParams.append("format", "json")
   uri.searchParams.append("method", "user.getrecenttracks")
   uri.searchParams.append("user", user)
   uri.searchParams.append("limit", "1")
-  
-  const response  = await fetch(uri)
-  const body = await response.json()
-  return body.recenttracks?.track?.find((track : any) => track["@attr"]?.nowplaying)
+
+  const {
+    recenttracks: { track }
+  } = await fetch(uri)
+  .then(data => data.json())
+
+  return track?.find((track : any) => track["@attr"]?.nowplaying)
 }

@@ -5,7 +5,8 @@ const example : string = '{ "startdate": "20231103", "fullstartdate": "202311032
 export async function getImage() {
   if (!import.meta.env.PROD) return JSON.parse(example)
 
-  const response = await fetch(url)
-  const body = await response.json()
-  return body.images[0]
+  const { images } = await fetch(url)
+  .then(data => data.json())
+
+  return images[0]
 }
