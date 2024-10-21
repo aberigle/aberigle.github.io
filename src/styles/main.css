@@ -39,10 +39,11 @@ a.icon {
   border-radius: 5%;
 }
 
-a.twitter:hover, a.twitter.active {
-  background: #4099ff;
-  box-shadow: 0 0 1em #4099ff;
+a.bsky:hover, a.bsky.active {
+  background: #0a7aff;
+  box-shadow: 0 0 1em #0a7aff;
 }
+
 a.github:hover, a.github.active{
   background: black;
   box-shadow: 0 0 1em black;

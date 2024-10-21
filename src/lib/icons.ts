@@ -1,15 +1,17 @@
-import { IconDefinition, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import {
+  IconDefinition,
+  faBluesky,
+  faGithub,
+  faLinkedin
+} from '@fortawesome/free-brands-svg-icons'
+import { faCoffee, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 interface SocialIcons {
   [key: string] : IconDefinition
 }
 
 const icons: SocialIcons = {
-  "twitter"  : faTwitter,
+  "bsky"     : faBluesky,
   "github"   : faGithub,
   "linkedin" : faLinkedin,
   "mail"     : faEnvelope,
