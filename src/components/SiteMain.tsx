@@ -11,24 +11,26 @@ const css = `
 
   .projects {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: stretch;
     gap: 1em;
     width: 100%;
   }
 
   a.project {
+    --project-accent: transparent;
     display: flex;
     flex-direction: column;
     place-content: center;
-    padding: 1em 1.4em;
+    padding: 1.3em 2em;
     transition: all 150ms;
     border-radius: 5%;
     text-decoration: none;
     text-align: left;
     color: white;
     background: #0c0f0e;
-    border: 1px solid #232a28;
+    box-shadow: 0 0 .3em #0c0f0e;
+
   }
 
   a.project .favicon {
@@ -56,16 +58,13 @@ const css = `
     color: white;
   }
 
-  a.uhurus-card:hover {
-    background: #00d492;
-    border-color: #00d492;
-    box-shadow: 0 0 1em #00d492;
-  }
+  a.project:hover,
+  a.project:focus-visible {
+    // background: var(--project-accent);
 
-  a.lopago-card:hover {
-    background: #FFBF00;
-    border-color: #FFBF00;
-    box-shadow: 0 0 1em #FFBF00;
+    border-left: .5em solid var(--project-accent);
+    border-color: var(--project-accent);
+    box-shadow: 0 0 .5em var(--project-accent);
   }
 `
 
@@ -74,13 +73,18 @@ export default function SiteMain() {
     <>
       <section id="main">
         <div class="projects">
-          <a class="project uhurus-card" href="https://uhurus.com?utm_source=aberigle.com" target="_blank">
+          <a class="project" style="--project-accent: #00d492" href="https://uhurus.com?utm_source=aberigle.com" target="_blank">
             <strong><img class="favicon" src="https://uhurus.com/favicon.ico" alt="" />uhurus</strong>
             <span>laboratorio de producto</span>
           </a>
-          <a class="project lopago-card" href="https://lopago.es?utm_source=aberigle.com" target="_blank">
+          <a class="project" style="--project-accent: #FFBF00" href="https://lopago.es?utm_source=aberigle.com" target="_blank">
             <strong><img class="favicon" src="https://lopago.es/favicon.ico" alt="" />lopago.</strong>
             <span>cobrar online fácil fácil</span>
+          </a>
+
+          <a class="project" style="--project-accent: oklch(76.662% 0.135 153.45)" href="https://csvifier.com?utm_source=aberigle.com" target="_blank">
+            <strong><img class="favicon" src="https://csvifier.com/favicon.ico" alt="" />csvifier</strong>
+            <span>JSON to CSV online parser</span>
           </a>
         </div>
       </section>
